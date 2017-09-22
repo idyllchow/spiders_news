@@ -1,7 +1,7 @@
-BOT_NAME = 'testspiders'
+BOT_NAME = 'spidersnews'
 
-SPIDER_MODULES = ['testspiders.spiders']
-NEWSPIDER_MODULE = 'testspiders.spiders'
+SPIDER_MODULES = ['spidersnews.spiders']
+NEWSPIDER_MODULE = 'spidersnews.spiders'
 
 # some sane limits by default (override if needed)
 CLOSESPIDER_PAGECOUNT = 1000
@@ -11,8 +11,8 @@ RETRY_ENABLED = False
 COOKIES_ENABLED = False
 
 DOWNLOADER_MIDDLEWARES = {
-    'testspiders.middleware.RandomUserAgent': 1,
-    'testspiders.middleware.ErrorMonkeyMiddleware': 2,
+    'spidersnews.middleware.RandomUserAgent': 1,
+    'spidersnews.middleware.ErrorMonkeyMiddleware': 2,
 }
 
 USER_AGENTS = [
