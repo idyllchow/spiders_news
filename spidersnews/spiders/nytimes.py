@@ -4,7 +4,7 @@ from urllib.parse import urljoin
 import scrapy
 from scrapy.loader import ItemLoader
 
-from testspiders.items import MynewsItem, NYItemLoader
+from spidersnews.items import MynewsItem, NYItemLoader
 
 
 class NYSpider(scrapy.Spider):

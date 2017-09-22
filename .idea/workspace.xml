@@ -27,7 +27,7 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="justfollow.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/justfollow.py">
+        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/justfollow.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -39,7 +39,7 @@
         </entry>
       </file>
       <file leaf-file-name="nytimes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/nytimes.py">
+        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/nytimes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="555">
               <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
@@ -71,7 +71,7 @@
         </entry>
       </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
-        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/settings.py">
+        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
               <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
@@ -81,7 +81,7 @@
         </entry>
       </file>
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/items.py">
+        <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
@@ -167,7 +167,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="testspiders" />
+              <option name="myItemId" value="spidersnews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spidersnews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spidersnews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spidersnews" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spiders" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -377,7 +395,7 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/middleware.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -387,7 +405,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/__init__.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -419,7 +437,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/broken_link.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/broken_link.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-338">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -427,7 +445,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/localinfo.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/localinfo.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -437,7 +455,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/dummy.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/dummy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -445,7 +463,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/timewaste.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/timewaste.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -455,7 +473,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/followall.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/followall.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="75" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="75" />
@@ -465,7 +483,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/loremipsum.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/loremipsum.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -475,7 +493,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/mad.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/mad.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -483,7 +501,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/justfollow.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/justfollow.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -493,7 +511,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/noop.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/noop.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -501,7 +519,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/items.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
@@ -511,7 +529,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/spiders/nytimes.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/spiders/nytimes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="555">
           <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
@@ -537,7 +555,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/testspiders/settings.py">
+    <entry file="file://$USER_HOME$/Develop/Python/spidersnews/spidersnews/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />

@@ -4,7 +4,7 @@ Spider that blocks, logs a warning and raises an error randomly
 import time
 import random
 import logging
-from testspiders.spiders.followall import FollowAllSpider
+from spidersnews.spiders.followall import FollowAllSpider
 
 
 class MadSpider(FollowAllSpider):
