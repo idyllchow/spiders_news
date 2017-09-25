@@ -26,9 +26,8 @@ class MynewsPipeline(object):
     # 调用来创建一个爬虫管道实例，必须返回管道的一个新实例
     @classmethod
     def from_crawler(cls, crawler):
-        mongo_uri = os.environ.get('MONGODB_URI')
         # db_name = os.environ.get('MONGODB_DB_NAME')
-        if not mongo_uri:
+        if not os.environ.get('MONGODB_URI'):
             # 存本地
             return cls(
                 mongo_uri=crawler.settings.get('MONGO_URI'),
@@ -36,9 +35,9 @@ class MynewsPipeline(object):
             )
         else:
             # 存云端
-            print("================has mongo uri: %s,====db_name: %s" % (crawler.settings.get('MONGO_URI'), cls.db_name))
+            print("================has mongo uri: %s,====db_name: %s" % ((os.environ.get('MONGODB_URI')), cls.db_name))
             return cls(
-                mongo_uri=crawler.settings.get('MONGO_URI'),
+                mongo_uri=os.environ.get('MONGODB_URI'),
                 mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
             )
 
