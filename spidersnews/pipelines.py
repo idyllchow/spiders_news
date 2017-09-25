@@ -19,32 +19,33 @@ class MynewsPipeline(object):
     db_name = 'news_items'
     # uri = 'mongodb://admin:111111@ds147902.mlab.com:47902/news_items'
 
-    # def __init__(self, mongo_uri, mongo_db):
-    #     self.mongo_uri = mongo_uri
-    #     self.mongo_db = mongo_db
+    def __init__(self, mongo_uri, mongo_db):
+        self.mongo_uri = mongo_uri
+        self.mongo_db = mongo_db
 
-    # @classmethod
-    # def from_crawler(cls, crawler):
-    #     mongo_uri = os.environ.get('MONGODB_URI')
-    #     # db_name = os.environ.get('MONGODB_DB_NAME')
-    #     if not mongo_uri:
-    #         # 存本地
-    #         print('================not mongo uri==============')
-    #         return cls(
-    #             mongo_uri=crawler.settings.get('MONGO_URI'),
-    #             mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
-    #         )
-    #     else:
-    #         # 存云端
-    #         print('================has mongo uri:%s,====db_name:%s' % mongo_uri % cls.db_name)
+    @classmethod
+    def from_crawler(cls, crawler):
+        mongo_uri = os.environ.get('MONGODB_URI')
+        # db_name = os.environ.get('MONGODB_DB_NAME')
+        if not mongo_uri:
+            # 存本地
+            print('================not mongo uri==============')
+            return cls(
+                mongo_uri=crawler.settings.get('MONGO_URI'),
+                mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
+            )
+        else:
+            # 存云端
+            print('================has mongo uri:%s,====db_name:%s' % mongo_uri % cls.db_name)
 
     def open_spider(self, spider):
-        print('===mongo uri===%s, mongo db===%s' % self.mongo_uri % self.mongo_db)
+        # print('===mongo uri===%s, mongo db===%s' % self.mongo_uri % self.mongo_db)
+        spider.log("opened spider %s" % spider.name)
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
 
     def close_spider(self, spider):
-        print('close spider==========')
+        spider.log("opened spider %s" % spider.name)
         self.client.close()
 
     def process_item(self, item, spider):
