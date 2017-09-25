@@ -33,10 +33,10 @@ class MynewsPipeline(object):
             )
         else:
             print('================has mongo uri==============')
-            # return cls(
-            #     mongo_uri=crawler.settings.get(mongodb_uri),
-            #     mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
-            # )
+            return cls(
+                mongo_uri=crawler.settings.get(mongodb_uri),
+                mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
+            )
 
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
