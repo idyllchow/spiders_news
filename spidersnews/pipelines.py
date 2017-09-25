@@ -36,7 +36,7 @@ class MynewsPipeline(object):
             )
         else:
             # 存云端
-            print("================has mongo uri: %s,====db_name: %s" % (mongo_uri, cls.db_name))
+            print("================has mongo uri: %s,====db_name: %s" % (crawler.settings.get('MONGO_URI'), cls.db_name))
             return cls(
                 mongo_uri=crawler.settings.get('MONGO_URI'),
                 mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
