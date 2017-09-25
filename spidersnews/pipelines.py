@@ -17,6 +17,7 @@ class MynewsPipeline(object):
     # 连接数据库
     collection_content_name = 'news_content'
     db_name = 'my_news'
+    # uri = 'mongodb://admin:111111@ds147902.mlab.com:47902/news_items'
 
     def __init__(self, mongo_uri, mongo_db):
         self.mongo_uri = mongo_uri
@@ -37,6 +38,7 @@ class MynewsPipeline(object):
             print('================has mongo uri==============%s: ', mongo_uri)
 
     def open_spider(self, spider):
+        print('===mongo uri===%s, mongo db===%s', self.mongo_uri, self.mongo_db)
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
 
