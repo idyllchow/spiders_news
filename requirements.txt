@@ -48,7 +48,6 @@ pytz==2016.4
 queuelib==1.4.2
 requests==2.10.0
 Scrapy==1.4.0
-scrapy-heroku==0.7.1
 service-identity==17.0.0
 six==1.10.0
 SQLAlchemy==1.0.12
@@ -59,3 +58,4 @@ w3lib==1.17.0
 wcwidth==0.1.6
 Werkzeug==0.12.2
 zope.interface==4.4.2
+scrapy-heroku==0.7.1
