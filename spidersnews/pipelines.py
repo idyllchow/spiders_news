@@ -19,9 +19,9 @@ class MynewsPipeline(object):
     db_name = 'news_items'
     # uri = 'mongodb://admin:111111@ds147902.mlab.com:47902/news_items'
 
-    def __init__(self, mongo_uri, mongo_db):
-        self.mongo_uri = mongo_uri
-        self.mongo_db = mongo_db
+    # def __init__(self, mongo_uri, mongo_db):
+    #     self.mongo_uri = mongo_uri
+    #     self.mongo_db = mongo_db
 
     # @classmethod
     # def from_crawler(cls, crawler):
