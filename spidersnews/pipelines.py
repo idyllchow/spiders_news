@@ -36,7 +36,7 @@ class MynewsPipeline(object):
             )
         else:
             # 存云端
-            print('================has mongo uri:%s,====db_name:%s' % mongo_uri % cls.db_name)
+            print("================has mongo uri:%s,====db_name:%s" % mongo_uri % cls.db_name)
 
     def open_spider(self, spider):
         # print('===mongo uri===%s, mongo db===%s' % self.mongo_uri % self.mongo_db)
