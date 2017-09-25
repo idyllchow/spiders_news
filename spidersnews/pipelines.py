@@ -32,7 +32,7 @@ class MynewsPipeline(object):
                 mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
             )
         else:
-            print('================has mongo uri==============')
+            print('================has mongo uri==============%s: , mongo_db: %s: ', crawler.settings.get(mongodb_uri), crawler.settings.get('MONGO_DATABASE', cls.db_name))
             return cls(
                 mongo_uri=crawler.settings.get(mongodb_uri),
                 mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
