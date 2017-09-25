@@ -16,7 +16,7 @@ from scrapy.pipelines.images import ImagesPipeline
 class MynewsPipeline(object):
     # 连接数据库
     collection_content_name = 'news_content'
-    db_name = 'my_news'
+    db_name = 'news_items'
     # uri = 'mongodb://admin:111111@ds147902.mlab.com:47902/news_items'
 
     def __init__(self, mongo_uri, mongo_db):
@@ -26,7 +26,7 @@ class MynewsPipeline(object):
     @classmethod
     def from_crawler(cls, crawler):
         mongo_uri = os.environ.get('MONGODB_URI')
-        db_name = os.environ.get('MONGODB_DB_NAME')
+        # db_name = os.environ.get('MONGODB_DB_NAME')
         if not mongo_uri:
             # 存本地
             print('================not mongo uri==============')
@@ -44,9 +44,11 @@ class MynewsPipeline(object):
         self.db = self.client[self.mongo_db]
 
     def close_spider(self, spider):
+        print('close spider==========')
         self.client.close()
 
     def process_item(self, item, spider):
+        print('process item==========')
         # 有内容则插入数据库
         if item['content'] is not None:
             self.db[self.collection_content_name].insert_one(dict(item))
