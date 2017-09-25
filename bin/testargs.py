@@ -14,7 +14,7 @@ def main():
     #logging.basicConfig(level=args.loglevel)
 
     print >>sys.stderr, 'SYS ARGV', sys.argv
-    print 'ARGS', args
+    print('ARGS', args)
     logger = logging.getLogger('testargs')
     logger.setLevel(args.loglevel)
     logger.error('testargs logger ERROR level')
