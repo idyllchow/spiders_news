@@ -24,19 +24,17 @@ class MynewsPipeline(object):
 
     @classmethod
     def from_crawler(cls, crawler):
-        mongodb_uri = os.environ.get('MONGODB_URI')
-        if not mongodb_uri:
+        mongo_uri = os.environ.get('MONGODB_URI')
+        if not mongo_uri:
+            # 存本地
             print('================not mongo uri==============')
             return cls(
                 mongo_uri=crawler.settings.get('MONGO_URI'),
                 mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
             )
         else:
-            print('================has mongo uri==============%s: , mongo_db: %s: ', crawler.settings.get(mongodb_uri), crawler.settings.get('MONGO_DATABASE', cls.db_name))
-            return cls(
-                mongo_uri=crawler.settings.get(mongodb_uri),
-                mongo_db=crawler.settings.get('MONGO_DATABASE', cls.db_name)
-            )
+            # 存云端
+            print('================has mongo uri==============%s: ', mongo_uri)
 
     def open_spider(self, spider):
         self.client = pymongo.MongoClient(self.mongo_uri)
