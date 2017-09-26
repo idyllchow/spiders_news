@@ -1,2 +1,2 @@
 web: scrapy crawl nytimes
-web: gunicorn api/news:app --log-file -
+web: gunicorn --chdir api news:app --log-file -
