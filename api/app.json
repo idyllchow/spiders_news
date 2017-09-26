@@ -1,0 +1,5 @@
+{
+  "name": "Flask for news on Heroku",
+  "description": "A news backend.",
+  "keywords": ["python", "flask"]
+}
