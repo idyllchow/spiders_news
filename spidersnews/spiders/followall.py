@@ -5,7 +5,7 @@
 # from scrapy.http import Request, HtmlResponse
 # from scrapy.linkextractors import LinkExtractor
 #
-# from spidersnews.items import Page
+# from moonlight.items import Page
 #
 #
 # class FollowAllSpider(scrapy.Spider):

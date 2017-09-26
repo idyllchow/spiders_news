@@ -1,7 +1,7 @@
 # import logging
 # import tempfile
 # import scrapy
-# from spidersnews.items import Page
+# from moonlight.items import Page
 #
 #
 # LOREMIPSUM = b'''\

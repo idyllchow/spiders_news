@@ -1,7 +1,7 @@
 # """
 # Crawll-all spider without domain restriction
 # """
-# from spidersnews.spiders.followall import FollowAllSpider
+# from moonlight.spiders.followall import FollowAllSpider
 # from twisted.internet import reactor
 #
 #

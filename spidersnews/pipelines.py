@@ -51,7 +51,6 @@ class MynewsPipeline(object):
         self.client.close()
 
     def process_item(self, item, spider):
-        print('process item==========')
         # 有内容则插入数据库
         if item['content'] is not None:
             self.db[self.collection_name].insert_one(dict(item))

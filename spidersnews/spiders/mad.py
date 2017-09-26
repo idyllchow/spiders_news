@@ -4,7 +4,7 @@
 # import time
 # import random
 # import logging
-# from spidersnews.spiders.followall import FollowAllSpider
+# from moonlight.spiders.followall import FollowAllSpider
 #
 #
 # class MadSpider(FollowAllSpider):
