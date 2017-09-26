@@ -42,7 +42,7 @@ def get_news_title():
 
 
 @app.route('/news', methods=['GET'])
-def get_news():
+def get_all_news():
     if request.method == 'GET':
         results = db[table_name].find()
         json_results = []
@@ -52,15 +52,15 @@ def get_news():
         return to_json(json_results)
 
 
-@app.route('/title/single_news', methods=['GET'])
-def get_single_news_title():
+@app.route('/news/single_news/title', methods=['GET'])
+def get_single_news_by_title():
     if request.method == 'GET':
         title = request.args.get('title')
         result = db[table_name].find({'title': title})
         return str(json_util.dumps(result))
 
 
-@app.route('/single_news', methods=['GET'])
+@app.route('/news/single_news/id', methods=['GET'])
 def get_single_news():
     if request.method == 'GET':
         object_id = ObjectId(request.args.get('id'))

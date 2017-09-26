@@ -36,5 +36,5 @@ class NYSpider(scrapy.Spider):
             for link in links:
                 next_page = response.urljoin(link)
                 # print("====next_page======%s" % next_page)
-                yield scrapy.Request(next_page, callback=self.parse)
+                yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
 
