@@ -48,6 +48,7 @@ class MynewsPipeline(object):
         #删除原有数据
         print('===mongo db count===%s' % (self.db[self.collection_name].count()))
         self.db[self.collection_name].count()
+        self.db[self.collection_name].remove({})
         print('remove===mongo db count===%s' % (self.db[self.collection_name].count()))
 
     def close_spider(self, spider):
