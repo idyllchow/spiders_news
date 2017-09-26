@@ -46,10 +46,9 @@ class MynewsPipeline(object):
         self.client = pymongo.MongoClient(self.mongo_uri)
         self.db = self.client[self.mongo_db]
         #删除原有数据
-        print('===mongo db count===%s' % (self.db[self.collection_name].count()))
+        print('mongo count %s' % (self.db[self.collection_name].count()))
         self.db[self.collection_name].count()
         self.db[self.collection_name].remove({})
-        print('remove===mongo db count===%s' % (self.db[self.collection_name].count()))
 
     def close_spider(self, spider):
         spider.log("opened spider %s" % spider.name)
