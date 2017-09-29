@@ -35,7 +35,18 @@ def to_json(data):
 def get_news_title():
     if request.method == 'GET':
         results = db[table_name].find({}, {'title': 1})
+        json_results = ''
+        for result in results:
+            json_results.append(result)
+        return to_json(json_results)
+
+
+@app.route('/news', methods=['GET'])
+def get_limit_news():
+    if request.method == 'GET':
+        results = db[table_name].find().limit(5)
         json_results = []
+        print('======result=====%s' % db)
         for result in results:
             json_results.append(result)
         return to_json(json_results)
