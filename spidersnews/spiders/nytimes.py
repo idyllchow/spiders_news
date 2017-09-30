@@ -32,6 +32,7 @@ class NYSpider(scrapy.Spider):
             links = sel.xpath('//h3/a/@href').extract()
             for link in links:
                 next_page = response.urljoin(link)+'dual/'
+                print("next page===%s"%next_page)
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
                 yield scrapy.Request(next_page, self.parse_list)
 
