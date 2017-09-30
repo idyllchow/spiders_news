@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$USER_HOME$/Develop/Python/moonlight/.idea/moonlight.iml" filepath="$USER_HOME$/Develop/Python/moonlight/.idea/moonlight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spiders_news.iml" filepath="$PROJECT_DIR$/.idea/spiders_news.iml" />
       <module fileurl="file://$USER_HOME$/Develop/Python/spidersnews/.idea/spidersnews.iml" filepath="$USER_HOME$/Develop/Python/spidersnews/.idea/spidersnews.iml" />
     </modules>
   </component>
