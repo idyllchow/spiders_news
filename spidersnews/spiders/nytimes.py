@@ -14,6 +14,7 @@ class NYSpider(scrapy.Spider):
     start_urls = ["https://cn.nytimes.com/"]
 
     def parse(self, response):
+        # add_xpath方式解析
         # l = NYItemLoader(item=MynewsItem(), response=response)
         # # l.add_xpath('title', '//h3/a/text()')
         # l.add_xpath('title', '//h3[@class="articleHeadline"]/text()')
@@ -24,12 +25,13 @@ class NYSpider(scrapy.Spider):
         # l.add_xpath('author', '//meta[@name="byline"]/@content')
         # l.add_xpath('date', '//meta[@name="date"]/@content')
         # yield l.load_item()
+        # add_xpath方式解析 end
 
         for sel in response.xpath('//ul/li'):
             # 遍历首页h3新闻标题
             links = sel.xpath('//h3/a/@href').extract()
             for link in links:
-                next_page = response.urljoin(link)
+                next_page = response.urljoin(link)+'dual/'
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
                 yield scrapy.Request(next_page, self.parse_list)
 
@@ -51,4 +53,28 @@ class NYSpider(scrapy.Spider):
             for c in content:
                 ac = ac + c + '\n'
         item['content'] = ac
+        yield item
+
+    # 解析双语
+    def parse_news_dual(self, response):
+        data = response.xpath("//div[@class='content chinese']")
+        item = MynewsItem()
+        item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
+        item['title_en'] = data.xpath("//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
+        item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
+        item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
+        item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
+        content = data.xpath("//div[@class='chinese']/p/text()").extract()
+        content_en = data.xpath("//div[@class='english']/p/text()").extract()
+        ac = ''
+        if (len(content) != 0):
+            for c in content:
+                ac = ac + c + '\n'
+        item['content'] = ac
+        ac_en = ''
+        if (len(content_en) != 0):
+            for c in content_en:
+                ac_en = ac_en + c + '\n'
+        item['content_en'] = ac_en
+
         yield item

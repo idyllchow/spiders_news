@@ -16,12 +16,16 @@ class MynewsItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     title = scrapy.Field()
+    title_en = scrapy.Field()
     urls = scrapy.Field()
     link = scrapy.Field()
     content = scrapy.Field()
+    content_en = scrapy.Field()
     author = scrapy.Field()
     date = scrapy.Field()
+    date_en = scrapy.Field()
     last_updated = scrapy.Field()
+    last_updated_en = scrapy.Field()
     # 图片
     image_urls = scrapy.Field()
     images = scrapy.Field()
