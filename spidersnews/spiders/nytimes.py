@@ -34,12 +34,12 @@ class NYSpider(scrapy.Spider):
                 next_page = response.urljoin(link)+'dual/'
                 print("next page===%s"%next_page)
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
-                yield scrapy.Request(next_page, self.parse_list)
+                yield scrapy.Request(next_page, self.parse_news_dual)
 
     def parse_list(self, response):
         urls = response.xpath("//a/@href").extract()
         for url in urls:
-            yield scrapy.Request(url, self.parse_news_dual)
+            yield scrapy.Request(url, self.parse_news)
 
     def parse_news(self, response):
         data = response.xpath("//div[@class='content chinese']")
