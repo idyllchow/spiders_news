@@ -16,13 +16,13 @@ class NYSpider(scrapy.Spider):
         # for sel in response.xpath('//ul/li'):
         l = NYItemLoader(item=MynewsItem(), response=response)
         # l.add_xpath('title', '//h3/a/text()')
-        l.add_xpath('title', '//h3[@class="articleHeadline"]/text()').extract()[0]
+        l.add_xpath('title', '//h3[@class="articleHeadline"]/text()').extract()
         l.add_xpath('urls', '//h3/a/@href')
         # l.add_xpath('content', '//h3/a/text()')
-        l.add_xpath('content', '//div[@class="content chinese"]/p/text()').extract()[0]
+        l.add_xpath('content', '//div[@class="content chinese"]/p/text()').extract()
         l.add_xpath('image_urls', "//img[@class='img-lazyload']/@data-url")
         l.add_xpath('author', '//meta[@name="byline"]/@content')
-        l.add_xpath('date', '//meta[@name="date"]/@content').extract()[0]
+        l.add_xpath('date', '//meta[@name="date"]/@content').extract()
         yield l.load_item()
 
         # next_href = response.xpath('//h3/a/@href').extract_first()
