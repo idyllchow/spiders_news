@@ -43,11 +43,12 @@ class NYSpider(scrapy.Spider):
         item = MynewsItem()
         item['title'] = data.xpath("//h3[@class='articleHeadline']/text()").extract_first()
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
+        item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
         item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
         content = data.xpath("//div[@class='content chinese']/p/text()").extract()
         ac = ''
         if (len(content) != 0):
             for c in content:
-                ac = ac + c
+                ac = ac + c + '\n'
         item['content'] = ac
         yield item
