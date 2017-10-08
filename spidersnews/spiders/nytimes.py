@@ -2,6 +2,7 @@
 from urllib.parse import urljoin
 
 import scrapy
+import uuid
 from hyperlink._url import unicode
 from scrapy.loader import ItemLoader
 from spidersnews.items import MynewsItem, NYItemLoader
@@ -60,6 +61,7 @@ class NYSpider(scrapy.Spider):
     def parse_news_dual(self, response):
         data = response.xpath("//div[@class='bilingual cf']")
         item = MynewsItem()
+        item['_id'] = uuid.uuid4()
         item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath("//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
