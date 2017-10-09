@@ -48,7 +48,7 @@ def get_limit_news():
         json_results = []
         print('======result=====%s' % db)
         for result in results:
-            json_results.append(str(result).replace("$oid", "id"))
+            json_results.append(result)
         return to_json(json_results)
 
 
@@ -59,6 +59,7 @@ def get_all_news():
         json_results = []
         print('======result=====%s' % db)
         for result in results:
+            result.pop('_id')
             json_results.append(result)
         return to_json(json_results)
 
