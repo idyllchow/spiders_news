@@ -32,8 +32,8 @@ class NYSpider(scrapy.Spider):
             # 遍历首页h3新闻标题
             links = sel.xpath('//h3/a/@href').extract()
             for link in links:
-                next_page = response.urljoin(link)+'dual/'
-                print("next page===%s"%next_page)
+                next_page = response.urljoin(link) + 'dual/'
+                print("next page===%s" % next_page)
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
                 yield scrapy.Request(next_page, self.parse_news_dual)
 
@@ -62,7 +62,8 @@ class NYSpider(scrapy.Spider):
         data = response.xpath("//div[@class='bilingual cf']")
         item = MynewsItem()
         item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
-        item['title_en'] = data.xpath("//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
+        item['title_en'] = data.xpath(
+            "//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
         item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
         item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
@@ -79,4 +80,5 @@ class NYSpider(scrapy.Spider):
                 ac_en = ac_en + c + '\n'
         item['content_en'] = ac_en
 
-        yield item
+        if (len(item['content']) != 0):
+            yield item
