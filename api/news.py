@@ -37,6 +37,7 @@ def get_news_title():
         results = db[table_name].find({}, {'title': 1})
         json_results = ''
         for result in results:
+            result.pop('_id')
             json_results.append(result)
         return to_json(json_results)
 
@@ -48,6 +49,7 @@ def get_limit_news():
         json_results = []
         print('======result=====%s' % db)
         for result in results:
+            result.pop('_id')
             json_results.append(result)
         return to_json(json_results)
 
@@ -70,6 +72,7 @@ def get_single_news_by_title():
     if request.method == 'GET':
         title = request.args.get('title')
         result = db[table_name].find({'title': title})
+        result.pop('_id')
         return str(json_util.dumps(result))
 
 
@@ -80,6 +83,7 @@ def get_single_news():
         result = db[table_name].find({'_id': object_id})
         # cover_result = json_util.dumps(result)
         # import pdb; pdb.set_trace()
+        result.pop('_id')
         return json_util.dumps(result)
 
 
