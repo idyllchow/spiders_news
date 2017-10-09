@@ -57,9 +57,10 @@ def get_all_news():
     if request.method == 'GET':
         results = db[table_name].find()
         json_results = []
-        print('======result=====%s' % db)
         for result in results:
+            print('======result before=====%s' % result)
             result.pop('_id')
+            print('======result=====%s' % result)
             json_results.append(result)
         return to_json(json_results)
 
