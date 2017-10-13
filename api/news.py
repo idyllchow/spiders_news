@@ -52,7 +52,7 @@ def get_limit_news():
             result.pop('_id')
             json_results.append(result)
         # return to_json(json_results)
-        return jsonify({"data": json_results})
+        return jsonify({"total_num": 200, "news": json_results})
 
 
 @app.route('/news', methods=['GET'])
