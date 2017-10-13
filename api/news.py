@@ -50,9 +50,9 @@ def get_limit_news():
         print('======result=====%s' % db)
         for result in results:
             result.pop('_id')
-            json_results.insert("total", "10")
             json_results.append(result)
-        return to_json(json_results)
+        # return to_json(json_results)
+        return jsonify({"data": json_results})
 
 
 @app.route('/news', methods=['GET'])
