@@ -45,8 +45,8 @@ def get_news_title():
 @app.route('/news', methods=['GET'])
 def get_limit_news():
     if request.method == 'GET':
-        index = request.args.get('index')
-        count = request.args.get('count')
+        index = int(request.args.get('index'))
+        count = int(request.args.get('count'))
         if index is '':
             results = db[table_name].find().limit(count)
         else:
