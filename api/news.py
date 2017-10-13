@@ -50,7 +50,8 @@ def get_limit_news():
         if index is '':
             results = db[table_name].find().limit(count)
         else:
-            results = db[table_name].find({"index": {"$gt": 2}, "index": {"$lte": 10}})
+            print("index is %d, limit is %d" % index, (index + count))
+            results = db[table_name].find({"index": {"$gt": index}, "index": {"$lte": index + count}})
         total_num = db[table_name].find().count()
         json_results = []
         print('======result=====%s' % db)
@@ -58,7 +59,7 @@ def get_limit_news():
             result.pop('_id')
             json_results.append(result)
         # return to_json(json_results)
-        return jsonify({"total_num": total_num, "news": json_results})
+        return jsonify({"total_num": total_num, "index": index + count, "news": json_results})
 
 
 @app.route('/news', methods=['GET'])
