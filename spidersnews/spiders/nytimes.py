@@ -61,6 +61,7 @@ class NYSpider(scrapy.Spider):
     def parse_news_dual(self, response):
         data = response.xpath("//div[@class='bilingual cf']")
         item = MynewsItem()
+        item['id'] = uuid.uuid4()
         item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath(
             "//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()

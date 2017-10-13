@@ -46,13 +46,14 @@ def get_news_title():
 def get_limit_news():
     if request.method == 'GET':
         results = db[table_name].find().limit(5)
+        total_num = db[table_name].find().count()
         json_results = []
         print('======result=====%s' % db)
         for result in results:
             result.pop('_id')
             json_results.append(result)
         # return to_json(json_results)
-        return jsonify({"total_num": 200, "news": json_results})
+        return jsonify({"total_num": total_num, "news": json_results})
 
 
 @app.route('/news', methods=['GET'])
