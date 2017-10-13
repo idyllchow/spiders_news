@@ -45,11 +45,12 @@ def get_news_title():
 @app.route('/news', methods=['GET'])
 def get_limit_news():
     if request.method == 'GET':
-        id = request.args.get('id')
-        if id is '':
-            results = db[table_name].find().limit(20)
+        index = request.args.get('index')
+        count = request.args.get('count')
+        if index is '':
+            results = db[table_name].find().limit(count)
         else:
-            results = db[table_name].find().limit(5)
+            results = db[table_name].find({"index": {"$gt": index}, "index": {"$lte": index + count}})
         total_num = db[table_name].find().count()
         json_results = []
         print('======result=====%s' % db)
