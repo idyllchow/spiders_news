@@ -63,6 +63,7 @@ class NYSpider(scrapy.Spider):
         data = response.xpath("//div[@class='bilingual cf']")
         item = MynewsItem()
         item['index'] = self.index + 1
+        self.index = item['index']
         item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath(
             "//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
