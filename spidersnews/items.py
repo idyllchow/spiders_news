@@ -22,6 +22,7 @@ class MynewsItem(scrapy.Item):
     link = scrapy.Field()
     content = scrapy.Field()
     content_en = scrapy.Field()
+    content_dual = scrapy.Field()
     author = scrapy.Field()
     date = scrapy.Field()
     date_en = scrapy.Field()
