@@ -50,12 +50,12 @@ class NYSpider(scrapy.Spider):
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
         item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
         item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
-        content = data.xpath("//div[@class='content chinese']/p/text()").extract()
+        content_cn = data.xpath("//div[@class='content chinese']/p/text()").extract()
         ac = ''
-        if (len(content) != 0):
-            for c in content:
+        if (len(content_cn) != 0):
+            for c in content_cn:
                 ac = ac + c + '\n'
-        item['content'] = ac
+        item['content_cn'] = ac
         yield item
 
     # 解析双语
