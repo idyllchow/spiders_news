@@ -72,7 +72,7 @@ class NYSpider(scrapy.Spider):
         item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
         content = data.xpath("//div[@class='chinese']/p/text()").extract()
         content_en = data.xpath("//div[@class='english']/p/text()").extract()
-        content_dual = data.xpath("//div[@class='english']/p/text()").extract() + data.xpath("//div[@class='chinese']/p/text()").extract()
+        content_dual = data.xpath("//div[@class='english'|@class='chinese']/p/text()").extract()
         ac = ''
         if (len(content) != 0):
             for c in content:
