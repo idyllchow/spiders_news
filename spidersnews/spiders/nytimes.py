@@ -64,20 +64,22 @@ class NYSpider(scrapy.Spider):
         item = MynewsItem()
         self.index = self.index + 1
         item['index'] = self.index
-        item['title'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
+        item['title_cn'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath(
             "//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
         item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
-        item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
-        content = data.xpath("//div[@class='chinese']/p/text()").extract()
+        # item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
+        item['date_cn'] = data.xpath("//div[@class='english article_en']/kickerBox/date/@content").extract_first()
+        item['date_cn'] = data.xpath("//div[@class='chinese']/kickerBox/date/@content").extract_first()
+        content_cn = data.xpath("//div[@class='chinese']/p/text()").extract()
         content_en = data.xpath("//div[@class='english']/p/text()").extract()
         content_dual = data.xpath("//p[@class='paragraph']/text()").extract()
         ac = ''
-        if (len(content) != 0):
-            for c in content:
+        if (len(content_cn) != 0):
+            for c in content_cn:
                 ac = ac + c + '\n'
-        item['content'] = ac
+        item['content_cn'] = ac
         ac_en = ''
         if (len(content_en) != 0):
             for c in content_en:
@@ -85,15 +87,10 @@ class NYSpider(scrapy.Spider):
         item['content_en'] = ac_en
 
         dual = ''
-        # if ((len(content) != 0) & (len(content_en) != 0)):
-        #     for c in content:
-        #         for ce in content_en:
-        #             dual = dual + c + '\n' + ce + '\n'
-        #             break
         if (len(content_dual) != 0):
             for dc in content_dual:
                 dual = dual + dc + '\n'
         item['content_dual'] = dual
 
-        if (len(item['content']) != 0):
+        if (len(item['content_cn']) != 0):
             yield item
