@@ -61,7 +61,7 @@ class NYSpider(scrapy.Spider):
     # 解析双语
     def parse_news_dual(self, response):
         item = MynewsItem()
-        item['url'] = 'https://cn.nytimes.com/' + response.xpath("//div[@class='content chinese']/@href").extract_first()
+        item['url'] = 'https://cn.nytimes.com/' + response.xpath("//ul/li[@class='dual on']/@a/href").extract()
         item['index'] = self.index
         data = response.xpath("//div[@class='bilingual cf']")
         item['title_cn'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
