@@ -48,10 +48,10 @@ def get_limit_news():
         index = int(request.args.get('index'))
         count = int(request.args.get('count'))
         if index is '':
-            results = db[table_name].find().limit(count).sort({"index": 1})
+            results = db[table_name].find().limit(count)
         else:
             print("index is %d, limit is %d" % (index, index + count))
-            results = db[table_name].find({"index": {"$gt": index, "$lte": index + count}}).sort({"index": 1})
+            results = db[table_name].find({"index": {"$gt": index, "$lte": index + count}}).sort({'index', 1})
         total_num = db[table_name].find().count()
         json_results = []
         print('======result=====%s' % db)
@@ -65,7 +65,7 @@ def get_limit_news():
 @app.route('/news', methods=['GET'])
 def get_all_news():
     if request.method == 'GET':
-        results = db[table_name].find().sort({"index": 1})
+        results = db[table_name].find()
         json_results = []
         for result in results:
             print('======result before=====%s' % result)
@@ -79,7 +79,7 @@ def get_all_news():
 def get_single_news_by_title():
     if request.method == 'GET':
         title = request.args.get('title')
-        result = db[table_name].find({'title': title}).sort({"index": 1})
+        result = db[table_name].find({'title': title})
         result.pop('_id')
         return str(json_util.dumps(result))
 
