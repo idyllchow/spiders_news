@@ -51,7 +51,7 @@ def get_limit_news():
             results = db[table_name].find().limit(count)
         else:
             print("index is %d, limit is %d" % (index, index + count))
-            results = db[table_name].find({"index": {"$gt": index, "$lte": index + count}}).sort({'index', 1})
+            results = db[table_name].find({"index": {"$gt": index, "$lte": index + count}}).sort('index', 1)
         total_num = db[table_name].find().count()
         json_results = []
         print('======result=====%s' % db)
