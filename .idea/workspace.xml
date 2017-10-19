@@ -27,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="101">
-              <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+              <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
               <folding>
                 <element signature="e#24#56#0" expanded="true" />
               </folding>
@@ -757,7 +757,7 @@
     <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
-          <caret line="74" column="73" selection-start-line="74" selection-start-column="73" selection-end-line="74" selection-end-column="73" />
+          <caret line="74" column="59" selection-start-line="74" selection-start-column="59" selection-end-line="74" selection-end-column="59" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
           </folding>
