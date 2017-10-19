@@ -36,7 +36,7 @@ class NYSpider(scrapy.Spider):
                 next_page = response.urljoin(link) + 'dual/'
                 print("next page===%s" % next_page)
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
-                yield scrapy.Request(next_page, self.parse_news_dual)
+                yield scrapy.Request(next_page, self.parse_news_dual(next_page))
 
     def parse_list(self, response):
         urls = response.xpath("//a/@href").extract()
@@ -59,10 +59,10 @@ class NYSpider(scrapy.Spider):
         yield item
 
     # 解析双语
-    def parse_news_dual(self, response):
+    def parse_news_dual(self, response, url):
         data = response.xpath("//div[@class='bilingual cf']")
         item = MynewsItem()
-        self.index = self.index + 1
+        item['url'] = url
         item['index'] = self.index
         item['title_cn'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath(
@@ -70,7 +70,7 @@ class NYSpider(scrapy.Spider):
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
         item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
         # item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
-        item['date_cn'] = data.xpath("//div[@class='cf articleHead']/div[@class='chinese']/div[@class='kickerBox']/span[@class='date']/text()")
+        item['date_cn'] = data.xpath("//div[@class='cf articleHead']/div[@class='chinese']/div[@class='kickerBox']/span[@class='date']/text()").text()
         item['date_en'] = data.xpath("//div[@class='cf articleHead']/div[@class='english article_en']/div[@class='kickerBox']/span[@class='date']/text()")
         content_cn = data.xpath("//div[@class='chinese']/p/text()").extract()
         content_en = data.xpath("//div[@class='english']/p/text()").extract()
@@ -93,4 +93,5 @@ class NYSpider(scrapy.Spider):
         item['content_dual'] = dual
 
         if (len(item['content_cn']) != 0):
+            self.index = self.index + 1
             yield item

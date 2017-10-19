@@ -15,6 +15,7 @@ class Page(scrapy.Item):
 class MynewsItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
+    url = scrapy.Field()
     index = scrapy.Field()
     title_cn = scrapy.Field()
     title_en = scrapy.Field()

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8a7cfdfe-fd42-4357-9fd4-62fb6477a058" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spidersnews/spiders/nytimes.py" afterPath="$PROJECT_DIR$/spidersnews/spiders/nytimes.py" />
     </list>
     <ignored path="testspiders.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,8 +26,8 @@
       <file leaf-file-name="nytimes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="329">
-              <caret line="72" column="143" selection-start-line="72" selection-start-column="143" selection-end-line="72" selection-end-column="159" />
+            <state relative-caret-position="120">
+              <caret line="14" column="42" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="e#24#56#0" expanded="true" />
               </folding>
@@ -766,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="72" column="143" selection-start-line="72" selection-start-column="143" selection-end-line="72" selection-end-column="159" />
+        <state relative-caret-position="120">
+          <caret line="14" column="42" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
           </folding>
