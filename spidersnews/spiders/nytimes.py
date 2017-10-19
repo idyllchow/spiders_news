@@ -36,7 +36,7 @@ class NYSpider(scrapy.Spider):
                 next_page = response.urljoin(link) + 'dual/'
                 print("next page===%s" % next_page)
                 # yield scrapy.Request(next_page, callback=self.parse, dont_filter=False)
-                yield scrapy.Request(next_page, self.parse_news_dual(next_page))
+                yield scrapy.Request(next_page, self.parse_news_dual)
 
     def parse_list(self, response):
         urls = response.xpath("//a/@href").extract()
@@ -59,19 +59,19 @@ class NYSpider(scrapy.Spider):
         yield item
 
     # 解析双语
-    def parse_news_dual(self, response, url):
-        data = response.xpath("//div[@class='bilingual cf']")
+    def parse_news_dual(self, response):
         item = MynewsItem()
-        item['url'] = url
+        item['url'] = 'https://cn.nytimes.com/' + response.xpath("//div[@class='content chinese']/@href").extract_first()
         item['index'] = self.index
+        data = response.xpath("//div[@class='bilingual cf']")
         item['title_cn'] = data.xpath("//div[@class='chinese']/h2[@class='articleHeadline']/text()").extract_first()
         item['title_en'] = data.xpath(
             "//div[@class='english article_en']/h2[@class='articleHeadline']/text()").extract_first()
         item['author'] = data.xpath("//meta[@name='byline']/@content").extract()
         item['image_urls'] = data.xpath("//img[@class='img-lazyload']/@data-url").extract()
         # item['date'] = data.xpath("//meta[@name='date']/@content").extract_first()
-        item['date_cn'] = data.xpath("//div[@class='cf articleHead']/div[@class='chinese']/div[@class='kickerBox']/span[@class='date']/text()").text()
-        item['date_en'] = data.xpath("//div[@class='cf articleHead']/div[@class='english article_en']/div[@class='kickerBox']/span[@class='date']/text()")
+        item['date_cn'] = data.xpath("//div[@class='cf articleHead']/div[@class='chinese']/div[@class='kickerBox']/span[@class='date']/text()").extract_first()
+        item['date_en'] = data.xpath("//div[@class='cf articleHead']/div[@class='english article_en']/div[@class='kickerBox']/span[@class='date']/text()").extract_first()
         content_cn = data.xpath("//div[@class='chinese']/p/text()").extract()
         content_en = data.xpath("//div[@class='english']/p/text()").extract()
         content_dual = data.xpath("//p[@class='paragraph']/text()").extract()

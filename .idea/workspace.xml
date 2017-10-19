@@ -26,7 +26,7 @@
       <file leaf-file-name="nytimes.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="210">
               <caret line="14" column="42" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="42" />
               <folding>
                 <element signature="e#24#56#0" expanded="true" />
@@ -39,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/spidersnews/items.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+              <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -107,8 +107,8 @@
         <option value="$PROJECT_DIR$/spidersnews/settings.py" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/api/news.py" />
-        <option value="$PROJECT_DIR$/spidersnews/items.py" />
         <option value="$PROJECT_DIR$/spidersnews/pipelines.py" />
+        <option value="$PROJECT_DIR$/spidersnews/items.py" />
         <option value="$PROJECT_DIR$/spidersnews/spiders/nytimes.py" />
       </list>
     </option>
@@ -749,14 +749,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/spidersnews/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/spidersnews/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="780">
@@ -765,9 +757,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/spidersnews/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/spidersnews/spiders/nytimes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
+        <state relative-caret-position="210">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="42" />
           <folding>
             <element signature="e#24#56#0" expanded="true" />
