@@ -78,18 +78,18 @@ class NYSpider(scrapy.Spider):
         ac = ''
         if (len(content_cn) != 0):
             for c in content_cn:
-                ac = ac + c + '\n'
+                ac = ac + c + '\n' + '\n'
         item['content_cn'] = ac
         ac_en = ''
         if (len(content_en) != 0):
             for c in content_en:
-                ac_en = ac_en + c + '\n'
+                ac_en = ac_en + c + '\n' + '\n'
         item['content_en'] = ac_en
 
         dual = ''
         if (len(content_dual) != 0):
             for dc in content_dual:
-                dual = dual + dc + '\n'
+                dual = dual + dc + '\n' + '\n'
         item['content_dual'] = dual
 
         if (len(item['content_cn']) != 0):
